@@ -1,0 +1,13 @@
+body{
+    
+    background: linear-gradient(211deg, rgba(125,194,236,1) 0%, rgba(192,204,168,1) 100%);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+#navi{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
