@@ -6,8 +6,8 @@ body{
     background-repeat: no-repeat;
     height: 100vh;
 }
-#navi{
-    width: 50%;
-    margin: auto;
-    text-align: center;
+#tabu{
+    font-size: 1.7rem;
+    font-weight: 400;
+
 }
