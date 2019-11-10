@@ -1,13 +1,78 @@
+@font-face {
+    font-family: "Nexa";
+    src: url("nexa/Nexa-Bold.otf");
+    src: url("nexa/Nexa-Bold.otf") format("opentype"),
+    }
+
 body{
-    
-    background: linear-gradient(211deg, rgba(125,194,236,1) 0%, rgba(192,204,168,1) 100%);
+    font-family: Nexa;
+    background: linear-gradient(211deg, rgba(125,194,236,1) 0%, rgb(132, 132, 132) 100%);
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     height: 100vh;
+    
+}
+body img{
+    width: 100%;
 }
 #tabu{
     font-size: 1.7rem;
     font-weight: 400;
 
+}
+.w3-border-red, .w3-hover-border-red:hover {
+    border-color: #A92729 !important;
+    }
+    a{
+       color: #002666;
+       font-size: 1.5rem;
+    }
+
+    #confirm{
+        background:transparent;
+        border-radius: 2rem;
+        border: 1px solid #fafafa;
+        width: 25rem;
+        height: 3rem;
+        text-align: center;
+        font-size:2rem;
+        color: #A92729;
+        padding: 5px;
+    }
+    #confirm:hover{
+        border-color: #002666;
+    }
+    input::placeholder{
+        padding: 5px;
+        font-size: 1.5rem;
+        color: #cecece96;
+    }
+
+    button{
+        width: 15rem;
+        background: transparent;
+        height: 3rem;
+        margin: 1rem;
+    }
+    #accept{
+        border:3px solid #001C57;
+        color: #001C57;
+        border-radius: 2rem;
+    }
+    #clear{
+        border:3px solid #A92729;
+        color: #A92729;
+        border-radius: 2rem;
+    }
+    #clear:hover{
+        border:3px solid #cc2d30;
+        color: #cc2d30;
+    }
+    #accept:hover{
+        border:3px solid #004b69;
+        color: #004b69;
+    }
+    h2{
+    color: #002666;
 }
