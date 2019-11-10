@@ -23,6 +23,7 @@ body img{
 }
 .w3-border-red, .w3-hover-border-red:hover {
     border-color: #A92729 !important;
+    color: #A92729 !important;
     }
     a{
        color: #002666;
