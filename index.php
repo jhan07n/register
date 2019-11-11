@@ -48,11 +48,11 @@
       <form action="" method="post">
       <div id="Paris" class="w3-container city" style="display:none">
         <h2>Nombre completo</h2>
-        <input placeholder="John Doe" name="nombre" type="text" id="nombre" maxlength="20"><br><br>
+        <input placeholder="John Doe" name="nombre" type="text" id="confirm" maxlength="20"><br><br>
         <h2>Correo</h2>
-        <input placeholder="tucorreo@dominio.com" name="correo" type="email" id="correo" maxlength="50"><br><br>
+        <input placeholder="tucorreo@dominio.com" name="correo" type="email" id="confirm" maxlength="50"><br><br>
         <h2>Institución</h2>
-        <input placeholder="MINTUR" id="work" type="work" name="work" maxlength="20">
+        <input placeholder="MINTUR" id="confirm" type="work" name="work" maxlength="20">
         <br><br><br><br><br>
         <button type="summit" name="accept" id="accept">Aceptar</button>
         <button id="clear">Limpiar</button>
