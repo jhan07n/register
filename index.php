@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,17 +45,19 @@
         <button id="clear">Limpiar</button>
       </div>
 
+      <form action="" method="post">
       <div id="Paris" class="w3-container city" style="display:none">
         <h2>Nombre completo</h2>
-        <input placeholder="John Doe" id="confirm" maxlength="20"><br><br>
+        <input placeholder="John Doe" name="nombre" type="text" id="nombre" maxlength="20"><br><br>
         <h2>Correo</h2>
-        <input placeholder="tucorreo@dominio.com" id="confirm" maxlength="50"><br><br>
+        <input placeholder="tucorreo@dominio.com" name="correo" type="email" id="correo" maxlength="50"><br><br>
         <h2>Institución</h2>
-        <input placeholder="MINTUR" id="confirm" maxlength="20">
+        <input placeholder="MINTUR" id="work" type="work" name="work" maxlength="20">
         <br><br><br><br><br>
-        <button id="accept">Aceptar</button>
+        <button type="summit" name="accept" id="accept">Aceptar</button>
         <button id="clear">Limpiar</button>
       </div>
+    </form>
     </div>
 
     <div class="modal fade" id="ignismyModal" role="dialog">
@@ -105,7 +108,30 @@
           }
         </script>
        
+       <?php
+    $con = mysqli_connect("localhost", "admin", "bF-64.sQ@", "TUR");
+    if(isset($_POST['accept'])){
+          $nombre= utf8_decode($_POST['nombre']);
+          $correo = $_POST['correo'];
+          $work = $_POST['work'];
 
+
+    if($con){
+
+      $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('". $nombre . "','" .$correo . "','" .$work . "')";
+      $result = mysqli_query($con,$sql);
+      if($result){
+      echo '<script>$("#ignismyModal").modal();</script>';
+      }
+      else{
+        echo $sql;
+      }
+    }
+  }
+    
+    
+?>
 </body>
 
 </html>
+
