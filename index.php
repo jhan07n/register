@@ -24,11 +24,11 @@
         <div class="col">
           <div class="w3-row">
             <a href="javascript:void(0)" onclick="openCity(event, 'confirmar');">
-              <div id="cc" class="w3-half tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">
+              <div id="cc" class="w3-half tablink w3-bottombar w3-hover-light-grey w3-padding">
                 Confirmación</div>
             </a>
-            <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
-              <div class="w3-half tablink w3-bottombar w3-hover-light-grey w3-padding">Registro</div>
+            <a href="javascript:void(0)" onclick="openCity(event, 'registro');">
+              <div class="w3-half tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">Registro</div>
             </a>
           </div>
         </div>
@@ -46,7 +46,7 @@
       </div>
 
       <form action="" method="post">
-      <div id="Paris" class="w3-container city" style="display:none">
+      <div id="registro" class="w3-container city" style="display:none">
         <h2>Nombre completo</h2>
         <input placeholder="John Doe" name="nombre" type="text" id="confirm" maxlength="20"><br><br>
         <h2>Correo</h2>
@@ -92,7 +92,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
       <script>
-          document.getElementById("confirmar").style.display = "block";
+          document.getElementById("registro").style.display = "block";
           function openCity(evt, cityName) {
             var i, x, tablinks;
             x = document.getElementsByClassName("city");
