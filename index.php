@@ -109,7 +109,7 @@
         </script>
        
        <?php
-    $con = mysqli_connect("localhost", "admin", "bF-64.sQ@", "TUR");
+    $con = mysqli_connect("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
     if(isset($_POST['accept'])){
           $nombre= utf8_decode($_POST['nombre']);
           $correo = $_POST['correo'];
@@ -126,6 +126,9 @@
       else{
         echo $sql;
       }
+    }
+    else{
+      echo $con;
     }
   }
     
