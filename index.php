@@ -72,7 +72,7 @@
         <div class="thank-you-pop">
           <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
           <h1>Registrado!</h1>
-          <p>Su codigo de registro es: <h4 style="color:#002666">TUR2019</h4><h2 style="color:#A92729">06</h2></p>
+          <p>Su codigo de registro es: <p style="color:#002666">TUR2019</p><h2 style="color:#A92729">06</h2></p>
           
          </div>
                      
