@@ -150,13 +150,13 @@
     
     
     $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf");src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
-    <b>Buenas tardes </b><br>
+    <b>Buenas tardes </b><br><br>
 
     Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
     <br><br>
     En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
     <br><br>
-    Código de confirmación:
+    Código de confirmación: <p style="color:#002666;font-size:30px;">TUR2019 <p style="color:#A92729;font-size:30px;">99</p>
     <br><br>
     <b>Fecha:</b> Miércoles 13 de noviembre <br>
     <b>Hora:</b> 8:00 a.m. <br>
