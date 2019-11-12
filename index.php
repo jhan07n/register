@@ -118,9 +118,16 @@
 
     if($con){
 
+      $sql= "SELECT id from CONFIRMACION WHERE CORREO = '\". $correo . \"'";
+      $result = mysqli_query($con,$sql);
+      if(!$result){
+
       $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('". $nombre . "','" .$correo . "','" .$work . "')";
       $result = mysqli_query($con,$sql);
       if($result){
+        $sql= "SELECT id from PARTICIPANTE WHERE CORREO = '\". $correo . \"'";
+        $result = mysqli_query($con,$sql);
+        $codigo=$result;
       sen();
       echo '<script>$("#ignismyModal").modal();</script>';
       }
@@ -129,8 +136,16 @@
       }
     }
     else{
+      $codigo= $result;
+
+    }
+  }
+    else{
       echo $con;
     }
+  
+  
+
   }
 
   function sen(){
@@ -156,7 +171,7 @@
     <br><br>
     En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
     <br><br>
-    Código de confirmación: <p style="color:#002666;font-size:20px;">TUR2019 <b style="color:#A92729;font-size:20px;">99</b></p>
+    Código de confirmación: <p style="color:#002666;font-size:20px;">TUR2019<b style="color:#A92729;font-size:20px;">'.$codigo .'</b></p>
     <br><br>
     <b>Fecha:</b> Miércoles 13 de noviembre <br>
     <b>Hora:</b> 8:00 a.m. <br>
