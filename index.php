@@ -71,8 +71,8 @@
                    
         <div class="thank-you-pop">
           <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-          <h1>Bienvenido!</h1>
-          <p>Su registro ha sido confirmado</p>
+          <h1>Registrado!</h1>
+          <p>Su codigo de registro es: <h2 style="color:#002666">TUR2019</h2><h2 style="color:#A92729"></h2></p>
           
          </div>
                      
@@ -134,7 +134,7 @@
   }
 
   function sen(){
-    $to = 'jnavarro@centroindotel.gob.do';
+    $to = $_POST["correo"];
     $firstname = $_POST["nombre"];
     $subject= "Foro Turismo Digital";
     $email= $_POST["correo"];
