@@ -118,26 +118,40 @@
 
     if($con){
 
-      $sql= "SELECT id from CONFIRMACION WHERE CORREO = '\". $correo . \"'";
+      $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '\". $correo . \"'";
       $result = mysqli_query($con,$sql);
-      if($result){
-        $codigo= $result;
+      if (!$result) {
+        echo 'Could not run query: ' . mysql_error();
+        exit;
+    }
+      $row = mysql_fetch_row($result);
+      
+      if(is_numeric($row[0])){
+        $codigo= $row[0];
         sen();
       }
         else{
 
       $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('". $nombre . "','" .$correo . "','" .$work . "')";
       $result = mysqli_query($con,$sql);
-      if($result){
+
         $sql= "SELECT id from PARTICIPANTE WHERE CORREO = '\". $correo . \"'";
         $result = mysqli_query($con,$sql);
-        $codigo=$result;
+        if (!$result) {
+          echo 'Could not run query: ' . mysql_error();
+          exit;
+      }
+      $row = mysql_fetch_row($result);
+      
+      if(is_numeric($row[0])){
+        $codigo= $row[0];
         sen();
+      }
       echo '<script>$("#ignismyModal").modal();</script>';
-      }
-      else{
+      
+      /* else{
         echo $sql;
-      }
+      } */
     }
  
   }
