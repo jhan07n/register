@@ -59,25 +59,7 @@
       </div>
     </form>
     </div>
-    <div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: 'Nexa';src: url('nexa/Nexa-Bold.otf');src: url('nexa/Nexa-Bold.otf') format('opentype'),}; font-family: Nexa;">
-    <b>Buenas tardes </b><br>
-
-    Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
-    <br><br>
-    En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
-    <br><br>
-    Código de confirmación:
-    <br><br>
-    <b>Fecha:</b> Miércoles 13 de noviembre <br>
-    <b>Hora:</b> 8:00 a.m. <br>
-    <b>Lugar:</b> Centro Indotel Espacio República Digital, C/ Isabel la Católica Esq. Emiliano Tejera, Ciudad Colonial. 
-    <br><br>
-    Te esperamos! <br><br>
-<img style="width:35rem;" src="https://images.squarespace-cdn.com/content/v1/5dbd1974270af32a346ce312/1573157509781-698YQJDP8PX7AH6TABDU/ke17ZwdGBToddI8pDm48kHXg06755pw7ZzeluOAVCHsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2diTK97QdQpnbkoCVDRSlSowOclHDKfATSpfj50jh0bs3CjLISwBs8eEdxAxTptZAUg/logos.png?format=1500w">
-    <br><br><br><br>
-    <i>Favor no contestar este correo</i>
-        
-    </div>
+    
     <div class="modal fade" id="ignismyModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -167,20 +149,23 @@
     $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
     
     
-    $message ='<div style="width:100%">
-    Buenas tardes 
+    $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("nexa/Nexa-Bold.otf");src: url("nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
+    <b>Buenas tardes </b><br>
 
     Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
-    
+    <br><br>
     En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
-    
+    <br><br>
     Código de confirmación:
-    
-    Fecha: Miércoles 13 de noviembre 
-    Hora: 8:00 a.m. 
-    Lugar: Centro Indotel Espacio República Digital, C/ Isabel la Católica Esq. Emiliano Tejera, Ciudad Colonial. 
-    
-    Te esperamos!
+    <br><br>
+    <b>Fecha:</b> Miércoles 13 de noviembre <br>
+    <b>Hora:</b> 8:00 a.m. <br>
+    <b>Lugar:</b> Centro Indotel Espacio República Digital, C/ Isabel la Católica Esq. Emiliano Tejera, Ciudad Colonial. 
+    <br><br>
+    Te esperamos! <br><br>
+<img style="width:35rem;" src="https://images.squarespace-cdn.com/content/v1/5dbd1974270af32a346ce312/1573157509781-698YQJDP8PX7AH6TABDU/ke17ZwdGBToddI8pDm48kHXg06755pw7ZzeluOAVCHsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2diTK97QdQpnbkoCVDRSlSowOclHDKfATSpfj50jh0bs3CjLISwBs8eEdxAxTptZAUg/logos.png?format=1500w">
+    <br><br><br><br>
+    <i>Favor no contestar este correo</i>
         
     </div>';
 
