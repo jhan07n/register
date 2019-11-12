@@ -156,7 +156,7 @@
     <br><br>
     En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
     <br><br>
-    Código de confirmación: <p style="color:#002666;font-size:30px;">TUR2019 <p style="color:#A92729;font-size:30px;">99</p>
+    Código de confirmación: <p style="color:#002666;font-size:20px;">TUR2019 <b style="color:#A92729;font-size:20px;">99</b></p>
     <br><br>
     <b>Fecha:</b> Miércoles 13 de noviembre <br>
     <b>Hora:</b> 8:00 a.m. <br>
