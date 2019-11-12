@@ -143,9 +143,9 @@
 
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= "From: " . $email . "\r\n"; // Sender's E-mail
+    $headers .= "From: hola@turismodigital.do \r\n"; // Sender's E-mail
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
+    
     $message ='<table style="width:100%">
         <tr>
             <td>'.$firstname.'  </td>
@@ -156,7 +156,7 @@
         
     </table>';
 
-    if (@mail($to, $email, $message, $headers))
+    if (@mail($to, $subject, $message, $headers))
     {
         echo 'El mensaje ha sido enviado.';
     }else{
