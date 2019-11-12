@@ -128,7 +128,7 @@
         $sql= "SELECT id from PARTICIPANTE WHERE CORREO = '\". $correo . \"'";
         $result = mysqli_query($con,$sql);
         $codigo=$result;
-      sen();
+      
       echo '<script>$("#ignismyModal").modal();</script>';
       }
       else{
@@ -139,6 +139,7 @@
       $codigo= $result;
 
     }
+    sen();
   }
     else{
       echo $con;
