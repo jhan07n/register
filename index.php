@@ -120,7 +120,11 @@
 
       $sql= "SELECT id from CONFIRMACION WHERE CORREO = '\". $correo . \"'";
       $result = mysqli_query($con,$sql);
-      if(!$result){
+      if($result){
+        $codigo= $result;
+        sen();
+      }
+        else{
 
       $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('". $nombre . "','" .$correo . "','" .$work . "')";
       $result = mysqli_query($con,$sql);
@@ -128,18 +132,14 @@
         $sql= "SELECT id from PARTICIPANTE WHERE CORREO = '\". $correo . \"'";
         $result = mysqli_query($con,$sql);
         $codigo=$result;
-      
+        sen();
       echo '<script>$("#ignismyModal").modal();</script>';
       }
       else{
         echo $sql;
       }
     }
-    else{
-      $codigo= $result;
-
-    }
-    sen();
+ 
   }
     else{
       echo $con;
