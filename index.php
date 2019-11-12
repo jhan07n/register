@@ -176,8 +176,8 @@ function modal($codigo){
     $text= "Hola esto es una prueba";
     
 
-    $headers  = "Centro Indotel: Soporte Centro Indotel\r\n";
-    $headers .= 'MIME-Version: 1.0' . "\r\n";
+    $headers  .= "Centro Indotel: Soporte Centro Indotel\r\n";
+    $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= "From: Soporte Foro Turismo Digital <foro@turismodigital.do> \r\n"; // Sender's E-mail
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $headers .= "X-Priority: 3\r\n";
@@ -206,7 +206,7 @@ function modal($codigo){
 
     if (@mail($to, $subject, $message, $headers))
     {
-        echo 'El mensaje ha sido enviado.';
+        //echo 'El mensaje ha sido enviado.';
     }else{
         echo 'Ha ocurrido un error.';
     }
