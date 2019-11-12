@@ -39,7 +39,7 @@
       <br><br>
       <div id="confirmar" class="w3-container city" style="display:none">
         <h2>Código de Confirmación</h2><br>
-        <input placeholder="TUR2019JNC" id="confirm" maxlength="10">
+        <input placeholder="TUR201901" id="confirm" maxlength="10">
         <br><br><br><br><br>
         <button id="accept" data-toggle="modal" href="#ignismyModal" >Aceptar</button>
         <button id="clear">Limpiar</button>
@@ -60,27 +60,7 @@
     </form>
     </div>
     
-    <div class="modal fade" id="ignismyModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
-                 </div>
-      
-                <div class="modal-body">
-                   
-        <div class="thank-you-pop">
-          <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-          <h1>Registrado!</h1>
-          <p>Su codigo de registro es: <span style="color:#002666">TUR2019</span><h2 style="color:#A92729">06</h2></p>
-          
-         </div>
-                     
-                </div>
-      
-            </div>
-        </div>
-    </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -109,8 +89,12 @@
         </script>
        
        <?php
-    $con = mysqli_connect("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
+       
+    $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");//
     if(isset($_POST['accept'])){
+      if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
           $nombre= utf8_decode($_POST['nombre']);
           $correo = $_POST['correo'];
           $work = $_POST['work'];
@@ -118,52 +102,73 @@
 
     if($con){
 
-      $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '\". $correo . \"'";
-      $result = mysqli_query($con,$sql);
+      $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '" . $correo ."'";
+      $result = $con->query($sql);
       if (!$result) {
         echo 'Could not run query: ' . mysql_error();
         exit;
-    }
-      $row = mysql_fetch_row($result);
-      
-      if(is_numeric($row[0])){
-        $codigo= $row[0];
-        sen();
       }
-        else{
+      if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $codigo = $row["ID"];
 
-      $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('". $nombre . "','" .$correo . "','" .$work . "')";
-      $result = mysqli_query($con,$sql);
-
-        $sql= "SELECT id from PARTICIPANTE WHERE CORREO = '\". $correo . \"'";
-        $result = mysqli_query($con,$sql);
+        modal($codigo);
+        sen($codigo);
+        }
+      else {
+        $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES (' $nombre  ',' $correo  ',' $work  ')";
+      if ($con->query($sql) === TRUE) { 
+        $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES (' $nombre  ',' $correo  ',' $work  ')";
+           
+      if ($con->query($sql) === TRUE) {
+        $sql= "SELECT ID from CONFIRMACION WHERE CORREO = ' $correo  '";
+        $result = $con->query($sql);
         if (!$result) {
           echo 'Could not run query: ' . mysql_error();
           exit;
-      }
-      $row = mysql_fetch_row($result);
-      
-      if(is_numeric($row[0])){
-        $codigo= $row[0];
-        sen();
-      }
-      echo '<script>$("#ignismyModal").modal();</script>';
-      
-      /* else{
-        echo $sql;
-      } */
-    }
- 
-  }
-    else{
-      echo $con;
-    }
-  
-  
+        }
 
+        if ($result->num_rows > 0) {
+          $row = $result->fetch_assoc();
+          $codigo = $row["ID"];
+          modal($codigo);
+          sen($codigo);
+          }
+    } else {
+      echo "Error: " . $sql . "<br>" . $con->error;
   }
+    } else {
+      echo "Error: " . $sql . "<br>" . $con->error;
+  }
+  }
+  }
+}
+function modal($codigo){
+  echo '<div class="modal fade" id="ignismyModal" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+               </div>
+    
+              <div class="modal-body">
+                 
+      <div class="thank-you-pop">
+        <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+        <h1>Registrado!</h1>
+        <p>Su codigo de registro es: <span style="color:#002666">TUR2019</span><h2 style="color:#A92729">'.$codigo .'</h2></p>
+        
+       </div>
+                   
+              </div>
+    
+          </div>
+      </div>
+  </div>
+  <script>$("#ignismyModal").modal();</script>';
+}
 
-  function sen(){
+  function sen($codigo){
     $to = $_POST["correo"];
     $firstname = $_POST["nombre"];
     $subject= "Foro Turismo Digital Código:";
@@ -171,8 +176,8 @@
     $text= "Hola esto es una prueba";
     
 
-    $headers .= "Centro Indotel: Soporte Centro Indotel\r\n";
-    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers  = "Centro Indotel: Soporte Centro Indotel\r\n";
+    $headers .= 'MIME-Version: 1.0' . "\r\n";
     $headers .= "From: Soporte Foro Turismo Digital <foro@turismodigital.do> \r\n"; // Sender's E-mail
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $headers .= "X-Priority: 3\r\n";
