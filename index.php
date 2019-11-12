@@ -149,7 +149,7 @@
     $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
     
     
-    $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("nexa/Nexa-Bold.otf");src: url("nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
+    $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf");src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
     <b>Buenas tardes </b><br>
 
     Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
