@@ -309,9 +309,9 @@ if(isset($_POST['confirm'])){
                    
         <div class="thank-you-pop">
           <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Close_Icon_Circle-512.png" alt="">
-          <h2>Bienvenido de nuevo! <b style="color:#002666">'.$nombre.'<b></h2>
-          <p>Su codigo de registro ha sido Confirmado.</p>
-          
+          <h2>Datos Incorrectos! <b style="color:#002666">'.$nombre.'<b></h2>
+          <p>Verifique su códogo, por favor.</p>
+          <p>o registrese <a href="http://turismodigital.tech">Aquí</a></p>
          </div>
                      
                 </div>
