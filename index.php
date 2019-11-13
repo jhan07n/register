@@ -233,7 +233,7 @@ if(isset($_POST['confirm'])){
       $id = str_replace("TUR2019","",$ticket);
 
       $sql="SELECT NOMBRE FROM CONFIRMAR WHERE ID=".$id."";
-      echo $sql;
+      
       $result = $con->query($sql);
       if (!$result) {
         echo 'Could not run query: ' . mysql_error();
@@ -241,6 +241,7 @@ if(isset($_POST['confirm'])){
       }
       if ($result->num_rows > 0) {
         $nombre = $row["NOMBRE"];
+        echo $nombre;
         modalcon($nombre);
       }
         else{
