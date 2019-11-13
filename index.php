@@ -117,11 +117,13 @@
         }
       else {
         $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
+      
       if ($con->query($sql) === TRUE) { 
         $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
-           
+      
       if ($con->query($sql) === TRUE) {
         $sql= "SELECT ID from CONFIRMACION WHERE CORREO = '$correo'";
+        echo $sql;
         $result = $con->query($sql);
         if (!$result) {
           echo 'Could not run query: ' . mysql_error();
