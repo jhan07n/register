@@ -170,6 +170,7 @@ function modal($codigo){
 }
 
   function sen($codigo,$nombre){
+    echo 'hola';
     $to = $_POST["correo"];
     $firstname = $_POST["nombre"];
     $subject= "Foro Turismo Digital Código:TUR2019".$codigo."";
