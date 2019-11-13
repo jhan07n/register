@@ -175,6 +175,7 @@
     }
     $con->query("SET NAMES 'utf8'");
           $nombre= utf8_encode($_POST['nombre']);
+          $nombre= utf8_decode($nombre);
           $correo = $_POST['correo'];
           $work = $_POST['work'];
           $coment = $_POST['coment'];
@@ -197,10 +198,10 @@
         sen($codigo,$nombre);
         }
       else {
-        $sql='INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION, COMENTARIO) VALUES ("'.utf8_decode($nombre).'","'.$correo.'","'.$work.'","'.$coment.'")';
+        $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION, COMENTARIO) VALUES ('$nombre','$correo','$work','$coment')";
       
       if ($con->query($sql) === TRUE) { 
-        $sql='INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION, COMENTARIO) VALUES ("'.utf8_decode($nombre).'","'.$correo.'","'.$work.'","'.$coment.'")';
+        $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION, COMENTARIO) VALUES ('$nombre','$correo','$work','$coment')";
       
       if ($con->query($sql) === TRUE) {
         $sql= "SELECT ID from CONFIRMACION WHERE CORREO = '$correo'";
