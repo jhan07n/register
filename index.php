@@ -156,12 +156,13 @@
               echo 'Ha ocurrido un error.';
           }
         }
-    $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
+   $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
+    //$con = new mysqli("localhost", "admin", "bF-64.sQ@", "TUR");
     if(isset($_POST['accept'])){
-      registrar();
+      registrar($con);
     }
       
-      function registrar(){
+      function registrar($con){
       if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
@@ -220,9 +221,9 @@
 /* Confirmacion */
 
 if(isset($_POST['confirm'])){
-  confirmar();
+  confirmar($con);
 }
-  function confirmar(){
+  function confirmar($con){
     if ($con->connect_error) {
       die("Connection failed: " . $con->connect_error);
   }
