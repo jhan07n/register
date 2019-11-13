@@ -132,6 +132,7 @@
         if ($result->num_rows > 0) {
           $row = $result->fetch_assoc();
           $codigo = $row["ID"];
+          echo $codigo;
           sen($codigo);
           modal($codigo);
           }
