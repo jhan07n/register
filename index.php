@@ -37,13 +37,14 @@
 
       <br>
       <br><br>
+      <form action="" method="post">
       <div id="confirmar" class="w3-container city" style="display:none">
         <h2>Código de Confirmación</h2><br>
-        <input placeholder="TUR201901" id="confirm" maxlength="10">
+        <input name="ticket" placeholder="TUR201901" id="confirm" >
         <br><br><br><br><br>
-        <button id="accept" data-toggle="modal" href="#ignismyModal" >Aceptar</button>
+        <button name="confirm" id="accept" >Aceptar</button>
         <button id="clear">Limpiar</button>
-      </div>
+      </div></form>
 
       <form action="" method="post">
       <div id="registro" class="w3-container city" style="display:none">
@@ -103,6 +104,7 @@
               <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
               <h1>Registrado!</h1>
               <p>Su codigo de registro es: <span style="color:#002666">TUR2019</span><h2 style="color:#A92729">'.$codigo .'</h2></p>
+              <p>Por favor revise su bandeja de entrada y siga las indicaciones.</p>
               
              </div>
                          
@@ -156,6 +158,10 @@
         }
     $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
     if(isset($_POST['accept'])){
+      registrar();
+    }
+      
+      function registrar(){
       if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
@@ -165,6 +171,7 @@
 
 
     if($con){
+      mysql_query("SET NAMES 'utf8'");
 
       $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '$correo'";
       $result = $con->query($sql);
@@ -209,8 +216,71 @@
   }
 }
 
+
+/* Confirmacion */
+
+if(isset($_POST['confirm'])){
+  confirmar();
+}
+  function confirmar(){
+    if ($con->connect_error) {
+      die("Connection failed: " . $con->connect_error);
+  }
+      mysql_query("SET NAMES 'utf8'");
+      $ticket = $_POST['ticket'];
+      $id = str_replace("TUR2019","",$ticket);
+
+      $sql="SELECT NOMBRE, CORREO, INSTITUCION from CONFIRMACION WHERE ID = '$id'";
+      $result = $con->query($sql);
+              if (!$result) {
+                echo 'Could not run query: ' . mysql_error();
+                exit;
+              }
+
+              if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $nombre = $row["NOMBRE"];
+                $correo = $row["CORREO"];
+                $work = $row["INSTITUCION"];
+                $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
+                if ($con->query($sql) === TRUE) {
+                  modalcon($nombre);
+                }
+                }
+          else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+        }
+
+      }
     
-    
+
+
+      function modalcon($nombre){
+        echo '<div class="modal fade" id="ignismyModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+                     </div>
+          
+                    <div class="modal-body">
+                       
+            <div class="thank-you-pop">
+              <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+              <h1>Bienvenido de nuevo! '.$nombre.'</h1>
+              <p>Su codigo de registro ha sido Confirmado.</p>
+              
+             </div>
+                         
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+        <script>$("#ignismyModal").modal();</script>';
+      }
+
+
 ?>
 </body>
 
