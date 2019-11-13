@@ -128,11 +128,11 @@
           
           
           $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf");src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
-          <b>Buenos Días, '.$nombre.' </b><br><br>
+          <b>Hola, '.$nombre.' </b><br><br>
       
           Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
           <br><br>
-          En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
+          En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel despues de almorzar. 
           <br><br>
           Código de confirmación: <p style="color:#002666;font-size:20px;">TUR2019<b style="color:#A92729;font-size:20px;">'.$codigo .'</b></p>
           <br><br>
