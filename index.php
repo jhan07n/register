@@ -232,6 +232,7 @@ if(isset($_POST['confirm'])){
       $id = str_replace("TUR2019","",$ticket);
       
       $sql="SELECT NOMBRE, CORREO, INSTITUCION from CONFIRMACION WHERE ID = $id";
+      echo '<script>alert('.$sql.')</script>';
       $result = $con->query($sql);
               if (!$result) {
                 echo 'Could not run query: ' . mysql_error();
