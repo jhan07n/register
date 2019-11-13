@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <script>$("#ignismyModal").modal();$("#ignismyModal").on(\'hidden.bs.modal\', function () {location.href= "http://turismodigital.do";}</script>';
+        <script>$("#ignismyModal").modal();</script>';
       }
       
         function sen($codigo,$nombre){
@@ -324,7 +324,7 @@ if(isset($_POST['confirm'])){
           <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Close_Icon_Circle-512.png" alt="">
           <h2>Datos Incorrectos! <b style="color:#002666">'.$nombre.'<b></h2>
           <p>Verifique su códogo, por favor.</p>
-          <p>o registrese <a href="http://turismodigital.tech">Aquí</a></p>
+          <p>O registrese <a href="http://turismodigital.tech">Aquí</a></p>
          </div>
                      
                 </div>
