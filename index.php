@@ -243,7 +243,7 @@ if(isset($_POST['confirm'])){
                 $nombre = $row["NOMBRE"];
                 $correo = $row["CORREO"];
                 $work = $row["INSTITUCION"];
-                $sql="INSERT INTO CONFIRMAR (ID,NOMBRE, CORREO, INSTITUCION) VALUES ('$id','$nombre','$correo','$work')";
+                $sql="INSERT INTO CONFIRMAR (ID,NOMBRE, CODIGO, CORREO, INSTITUCION) VALUES ('$id','$nombre','$ticket','$correo','$work')";
                 if ($con->query($sql) === TRUE) {
                   modalcon($nombre);
                 }
