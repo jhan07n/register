@@ -241,7 +241,7 @@ if(isset($_POST['confirm'])){
       }
       if ($result->num_rows > 0) {
         $nombre = $row["NOMBRE"];
-        echo $nombre;
+        echo 'HOla'.$nombre;
         modalcon($nombre);
       }
         else{
