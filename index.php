@@ -237,7 +237,6 @@ if(isset($_POST['confirm'])){
                 echo 'Could not run query: ' . mysql_error();
                 exit;
               }
-aa
               if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 $nombre = $row["NOMBRE"];
