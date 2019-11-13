@@ -43,7 +43,7 @@
         <input name="ticket" placeholder="TUR201901" id="confirm" required onfocus="this.value='TUR2019'">
         <br><br><br><br><br>
         <button name="confirm" id="accept" type="summit">Aceptar</button>
-        <button id="clear">Limpiar</button>
+        <button id="clear" onclick="limpiar()">Limpiar</button>
       </div></form>
 
       <form action="" method="post">
@@ -60,9 +60,9 @@
         <h6>¿Cuantas personas lo acompañan? <input type="number" style="width: 50px;" name="coment" 
           onkeypress="return event.charCode >= 48 && event.charCode <=57 "inputmode="decimal"></h6><!-- || event.charCode==46 || event.charCode==44 -->
         </div>
-        <br><br><br><br><br>
+        <br>
         <button type="summit" name="accept" id="accept">Aceptar</button>
-        <button id="clear">Limpiar</button>
+        <button id="clear" onclick="limpiar()">Limpiar</button>
       </div>
     </form>
     </div>
@@ -92,6 +92,9 @@
             }
             document.getElementById(cityName).style.display = "block";
             evt.currentTarget.firstElementChild.className += " w3-border-red";
+          }
+          function limpiar(){
+            document.getElementById('confirm').value="";
           }
         </script>
        
