@@ -231,7 +231,7 @@ if(isset($_POST['confirm'])){
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
       
-      $sql="SELECT NOMBRE, CORREO, INSTITUCION from CONFIRMACION WHERE ID = $id";
+      $sql="SELECT NOMBRE, CORREO, INSTITUCION from CONFIRMACION WHERE ID = $id";ss
       echo '<script>alert('.$sql.')</script>';
       $result = $con->query($sql);
               if (!$result) {
