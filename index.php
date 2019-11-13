@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <script>$("#ignismyModal").modal();location.href= "http://turismodigital.do";</script>';
+        <script>$("#ignismyModal").modal();("#ignismyModal").on(\'hidden.bs.modal\', function () {location.href= "http://turismodigital.do";}</script>';
       }
       
         function sen($codigo,$nombre){
@@ -305,7 +305,7 @@ if(isset($_POST['confirm'])){
                 </div>
             </div>
         </div>
-        <script>$("#ignismyModal").modal();location.href= "http://turismodigital.do";</script>';
+        <script>$("#ignismyModal").modal();("#ignismyModal").on(\'hidden.bs.modal\', function () {location.href= "http://turismodigital.do";}</script>';
       }
 
 

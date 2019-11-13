@@ -43,6 +43,7 @@ body img{
         font-size:2rem;
         color: #A92729;
         padding: 5px;
+        text-transform: capitalize;
     }
     #confirm:hover{
         border-color: #002666;
