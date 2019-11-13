@@ -123,7 +123,6 @@
       
       if ($con->query($sql) === TRUE) {
         $sql= "SELECT ID from CONFIRMACION WHERE CORREO = '$correo'";
-        echo $sql;
         $result = $con->query($sql);
         if (!$result) {
           echo 'Could not run query: ' . mysql_error();
