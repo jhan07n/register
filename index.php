@@ -173,12 +173,9 @@ function modal($codigo){
     $firstname = $_POST["nombre"];
     $subject= "Foro Turismo Digital Código:TUR2019".$codigo."";
     $email= $_POST["correo"];
-    $text= "Hola esto es una prueba";
-    
-
     $headers .= "Centro Indotel: Soporte Centro Indotel\r\n";
     $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= "From: Soporte Foro Turismo Digital <foro@turismodigital.do> \r\n"; // Sender's E-mail
+    $headers .= "From: Soporte Turismo Digital <foro@turismodigital.do> \r\n"; // Sender's E-mail
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $headers .= "X-Priority: 3\r\n";
     $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
