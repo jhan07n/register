@@ -174,7 +174,7 @@
         die("Connection failed: " . $con->connect_error);
     }
     $con->query("SET NAMES 'utf8'");
-          $nombre= utf8_decode($_POST['nombre']);
+          $nombre= utf8_encode($_POST['nombre']);
           $correo = $_POST['correo'];
           $work = $_POST['work'];
           $coment = $_POST['coment'];
