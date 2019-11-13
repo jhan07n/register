@@ -155,7 +155,7 @@
               echo 'Ha ocurrido un error.';
           }
         }
-    $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");//
+    $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
     if(isset($_POST['accept'])){
       if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
@@ -198,7 +198,7 @@
           $row = $result->fetch_assoc();
           $codigo = $row["ID"];
           echo $codigo;
-          sen($codigo);
+          sen($codigo,$nombre);
           modal($codigo);
           }
     } else {
