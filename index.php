@@ -230,14 +230,14 @@ if(isset($_POST['confirm'])){
       
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
-      echo '<script>alert('.$id.')</script>';
+      
       $sql="SELECT NOMBRE, CORREO, INSTITUCION from CONFIRMACION WHERE ID = '$id'";
       $result = $con->query($sql);
               if (!$result) {
                 echo 'Could not run query: ' . mysql_error();
                 exit;
               }
-             
+              echo '<script>alert("dentro del select")</script>';
               if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 $nombre = $row["NOMBRE"];
