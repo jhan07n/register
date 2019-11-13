@@ -263,7 +263,7 @@ if(isset($_POST['confirm'])){
                 }
                 }
           else {
-            echo "Error: " . $sql . "<br>" . $con->error;
+            modalerror();
         }
 
       }
@@ -296,6 +296,31 @@ if(isset($_POST['confirm'])){
       }
 
 
+
+      function modalerror(){
+        echo '<div class="modal fade" id="ignismyModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+                 </div>
+      
+                <div class="modal-body">
+                   
+        <div class="thank-you-pop">
+          <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Close_Icon_Circle-512.png" alt="">
+          <h2>Bienvenido de nuevo! <b style="color:#002666">'.$nombre.'<b></h2>
+          <p>Su codigo de registro ha sido Confirmado.</p>
+          
+         </div>
+                     
+                </div>
+      
+            </div>
+        </div>
+    </div>
+    <script>$("#ignismyModal").modal();</script>';
+      }
 ?>
 </body>
 

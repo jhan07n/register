@@ -4,10 +4,16 @@
     src: url("nexa/Nexa-Bold.otf") format("opentype"),
     }
 
+
+    @media screen and (max-height:768px){
+        body{
+            height: 120% !important;
+        }
+    }
 body{
     font-family: Nexa;
     background: linear-gradient(211deg, rgba(125,194,236,1) 0%, rgb(132, 132, 132) 120%);
-    height: 120%;
+    height: 100vh;
     
 }
 body img{
