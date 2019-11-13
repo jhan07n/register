@@ -57,7 +57,7 @@
         <h5 >¿Viene acompañado? <input type="checkbox" id="chec" 
           oninput="if(this.checked){document.getElementById('agregar').style.display = 'block';}else{document.getElementById('agregar').style.display = 'none';}"></h5><br>
         <div id="agregar">
-        <h6>¿Con cuanta personas viene? <input type="number" style="width: 50px;" name="coment" 
+        <h6>¿Cuantas personas lo acompañan? <input type="number" style="width: 50px;" name="coment" 
           onkeypress="return event.charCode >= 48 && event.charCode <=57 "inputmode="decimal"></h6><!-- || event.charCode==46 || event.charCode==44 -->
         </div>
         <br><br><br><br><br>
@@ -175,6 +175,7 @@
           $nombre= utf8_decode($_POST['nombre']);
           $correo = $_POST['correo'];
           $work = $_POST['work'];
+          $coment = $_POST['coment'];
 
 
     if($con){
@@ -194,10 +195,10 @@
         sen($codigo,$nombre);
         }
       else {
-        $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
+        $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION, COMENTARIO) VALUES ('$nombre','$correo','$work','$coment')";
       
       if ($con->query($sql) === TRUE) { 
-        $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
+        $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION, COMENTARIO) VALUES ('$nombre','$correo','$work','$coment')";
       
       if ($con->query($sql) === TRUE) {
         $sql= "SELECT ID from CONFIRMACION WHERE CORREO = '$correo'";
