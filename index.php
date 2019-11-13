@@ -227,7 +227,7 @@ if(isset($_POST['confirm'])){
       die("Connection failed: " . $con->connect_error);
   }
   
-     
+     s
       echo '<script>alert("Hola")</script>';
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
