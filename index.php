@@ -113,7 +113,7 @@
         $codigo = $row["ID"];
 
         modal($codigo);
-        sen($codigo);
+        sen($codigo,$nombre);
         }
       else {
         $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
@@ -169,7 +169,7 @@ function modal($codigo){
   <script>$("#ignismyModal").modal();</script>';
 }
 
-  function sen($codigo){
+  function sen($codigo,$nombre){
     $to = $_POST["correo"];
     $firstname = $_POST["nombre"];
     $subject= "Foro Turismo Digital Código:TUR2019".$codigo."";
@@ -183,7 +183,7 @@ function modal($codigo){
     
     
     $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf");src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
-    <b>Buenas tardes </b><br><br>
+    <b>Buenos Días, '.$nombre.' </b><br><br>
 
     Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
     <br><br>
