@@ -115,7 +115,6 @@
       }
       
         function sen($codigo,$nombre){
-          echo 'hola';
           $to = $_POST["correo"];
           $firstname = $_POST["nombre"];
           $subject= "Foro Turismo Digital Código:TUR2019".$codigo."";
@@ -197,7 +196,6 @@
         if ($result->num_rows > 0) {
           $row = $result->fetch_assoc();
           $codigo = $row["ID"];
-          echo $codigo;
           sen($codigo,$nombre);
           modal($codigo);
           }
