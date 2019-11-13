@@ -226,8 +226,9 @@ if(isset($_POST['confirm'])){
     if ($con->connect_error) {
       die("Connection failed: " . $con->connect_error);
   }
-  echo '<script>alert("Hola")</script>';
+  
       mysql_query("SET NAMES 'utf8'");
+      echo '<script>alert("Hola")</script>';
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
       
