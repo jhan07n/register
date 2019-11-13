@@ -163,6 +163,7 @@
           }
         }
    $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
+   
    // $con = new mysqli("localhost", "admin", "bF-64.sQ@", "TUR");
     if(isset($_POST['accept'])){
       registrar($con);
@@ -172,13 +173,14 @@
       if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
+    mysql_query("SET NAMES 'utf8'");
           $nombre= utf8_decode($_POST['nombre']);
           $correo = $_POST['correo'];
           $work = $_POST['work'];
           $coment = $_POST['coment'];
 
 
-    if($con){
+   
       //mysql_query("SET NAMES 'utf8'");
 
       $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '$correo'";
@@ -221,7 +223,7 @@
       echo "Error: " . $sql . "<br>" . $con->error;
   }
   }
-  }
+  
 }
 
 
@@ -234,7 +236,7 @@ if(isset($_POST['confirm'])){
     if ($con->connect_error) {
       die("Connection failed: " . $con->connect_error);
   }
-  
+  mysql_query("SET NAMES 'utf8'");
       
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
