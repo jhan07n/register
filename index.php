@@ -89,7 +89,72 @@
         </script>
        
        <?php
-       
+       function modal($codigo){
+        echo '<div class="modal fade" id="ignismyModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+                     </div>
+          
+                    <div class="modal-body">
+                       
+            <div class="thank-you-pop">
+              <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+              <h1>Registrado!</h1>
+              <p>Su codigo de registro es: <span style="color:#002666">TUR2019</span><h2 style="color:#A92729">'.$codigo .'</h2></p>
+              
+             </div>
+                         
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+        <script>$("#ignismyModal").modal();</script>';
+      }
+      
+        function sen($codigo,$nombre){
+          echo 'hola';
+          $to = $_POST["correo"];
+          $firstname = $_POST["nombre"];
+          $subject= "Foro Turismo Digital Código:TUR2019".$codigo."";
+          $email= $_POST["correo"];
+          $headers .= "Centro Indotel: Soporte Centro Indotel\r\n";
+          $headers  = 'MIME-Version: 1.0' . "\r\n";
+          $headers .= "From: Soporte Turismo Digital <foro@turismodigital.do> \r\n"; // Sender's E-mail
+          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+          $headers .= "X-Priority: 3\r\n";
+          $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
+          
+          
+          $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf");src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
+          <b>Buenos Días, '.$nombre.' </b><br><br>
+      
+          Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
+          <br><br>
+          En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
+          <br><br>
+          Código de confirmación: <p style="color:#002666;font-size:20px;">TUR2019<b style="color:#A92729;font-size:20px;">'.$codigo .'</b></p>
+          <br><br>
+          <b>Fecha:</b> Miércoles 13 de noviembre <br>
+          <b>Hora:</b> 8:00 a.m. <br>
+          <b>Lugar:</b> Centro Indotel Espacio República Digital, C/ Isabel la Católica Esq. Emiliano Tejera, Ciudad Colonial. 
+          <br><br>
+          Te esperamos! <br><br>
+      <img style="width:35rem;" src="https://images.squarespace-cdn.com/content/v1/5dbd1974270af32a346ce312/1573157509781-698YQJDP8PX7AH6TABDU/ke17ZwdGBToddI8pDm48kHXg06755pw7ZzeluOAVCHsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2diTK97QdQpnbkoCVDRSlSowOclHDKfATSpfj50jh0bs3CjLISwBs8eEdxAxTptZAUg/logos.png?format=1500w">
+          <br><br><br><br>
+          <i>Favor no contestar este correo</i>
+              
+          </div>';
+      
+          if (@mail($to, $subject, $message, $headers))
+          {
+              //echo 'El mensaje ha sido enviado.';
+          }else{
+              echo 'Ha ocurrido un error.';
+          }
+        }
     $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");//
     if(isset($_POST['accept'])){
       if ($con->connect_error) {
@@ -145,72 +210,7 @@
   }
   }
 }
-function modal($codigo){
-  echo '<div class="modal fade" id="ignismyModal" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
-               </div>
-    
-              <div class="modal-body">
-                 
-      <div class="thank-you-pop">
-        <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-        <h1>Registrado!</h1>
-        <p>Su codigo de registro es: <span style="color:#002666">TUR2019</span><h2 style="color:#A92729">'.$codigo .'</h2></p>
-        
-       </div>
-                   
-              </div>
-    
-          </div>
-      </div>
-  </div>
-  <script>$("#ignismyModal").modal();</script>';
-}
 
-  function sen($codigo,$nombre){
-    echo 'hola';
-    $to = $_POST["correo"];
-    $firstname = $_POST["nombre"];
-    $subject= "Foro Turismo Digital Código:TUR2019".$codigo."";
-    $email= $_POST["correo"];
-    $headers .= "Centro Indotel: Soporte Centro Indotel\r\n";
-    $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= "From: Soporte Turismo Digital <foro@turismodigital.do> \r\n"; // Sender's E-mail
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= "X-Priority: 3\r\n";
-    $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
-    
-    
-    $message ='<div style="width:70%;text-align: justify;padding-left:2rem;@font-face {font-family: "Nexa";src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf");src: url("http://turismodigital.tech/nexa/Nexa-Bold.otf") format("opentype"),}; font-family: Nexa;">
-    <b>Buenos Días, '.$nombre.' </b><br><br>
-
-    Luego de un cordial saludo, le escribimos con relación al 1er. Foro de Turismo Digital “Ciudad Colonial -Primer Destino Inteligente RD”. 
-    <br><br>
-    En ese sentido, le enviamos el código de confirmación para su asistencia, el cual debe ser presentado a su llegada al Centro Indotel. 
-    <br><br>
-    Código de confirmación: <p style="color:#002666;font-size:20px;">TUR2019<b style="color:#A92729;font-size:20px;">'.$codigo .'</b></p>
-    <br><br>
-    <b>Fecha:</b> Miércoles 13 de noviembre <br>
-    <b>Hora:</b> 8:00 a.m. <br>
-    <b>Lugar:</b> Centro Indotel Espacio República Digital, C/ Isabel la Católica Esq. Emiliano Tejera, Ciudad Colonial. 
-    <br><br>
-    Te esperamos! <br><br>
-<img style="width:35rem;" src="https://images.squarespace-cdn.com/content/v1/5dbd1974270af32a346ce312/1573157509781-698YQJDP8PX7AH6TABDU/ke17ZwdGBToddI8pDm48kHXg06755pw7ZzeluOAVCHsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2diTK97QdQpnbkoCVDRSlSowOclHDKfATSpfj50jh0bs3CjLISwBs8eEdxAxTptZAUg/logos.png?format=1500w">
-    <br><br><br><br>
-    <i>Favor no contestar este correo</i>
-        
-    </div>';
-
-    if (@mail($to, $subject, $message, $headers))
-    {
-        //echo 'El mensaje ha sido enviado.';
-    }else{
-        echo 'Ha ocurrido un error.';
-    }
-  }
     
     
 ?>
