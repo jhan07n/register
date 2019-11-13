@@ -48,11 +48,11 @@
       <form action="" method="post">
       <div id="registro" class="w3-container city" style="display:none">
         <h2>Nombre completo</h2>
-        <input placeholder="John Doe" name="nombre" type="text" id="confirm" maxlength="20" required><br><br>
+        <input placeholder="John Doe" name="nombre" type="text" id="confirm" required><br><br>
         <h2>Correo</h2>
-        <input placeholder="tucorreo@dominio.com" name="correo" type="email" id="confirm" maxlength="50" required><br><br>
+        <input placeholder="tucorreo@dominio.com" name="correo" type="email" id="confirm" required><br><br>
         <h2>Institución</h2>
-        <input placeholder="MINTUR" id="confirm" type="work" name="work" maxlength="20" required>
+        <input placeholder="MINTUR" id="confirm" type="work" name="work" required>
         <br><br><br><br><br>
         <button type="summit" name="accept" id="accept">Aceptar</button>
         <button id="clear">Limpiar</button>
@@ -102,7 +102,7 @@
 
     if($con){
 
-      $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '" . $correo ."'";
+      $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '$correo'";
       $result = $con->query($sql);
       if (!$result) {
         echo 'Could not run query: ' . mysql_error();
@@ -116,9 +116,9 @@
         sen($codigo);
         }
       else {
-        $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES (' $nombre  ',' $correo  ',' $work  ')";
+        $sql="INSERT INTO PARTICIPANTE (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
       if ($con->query($sql) === TRUE) { 
-        $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES (' $nombre  ',' $correo  ',' $work  ')";
+        $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
            
       if ($con->query($sql) === TRUE) {
         $sql= "SELECT ID from CONFIRMACION WHERE CORREO = ' $correo  '";
