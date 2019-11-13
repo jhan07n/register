@@ -132,8 +132,8 @@
         if ($result->num_rows > 0) {
           $row = $result->fetch_assoc();
           $codigo = $row["ID"];
-          modal($codigo);
           sen($codigo);
+          modal($codigo);
           }
     } else {
       echo "Error: " . $sql . "<br>" . $con->error;
