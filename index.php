@@ -40,7 +40,7 @@
       <form action="" method="post">
       <div id="confirmar" class="w3-container city" style="display:none">
         <h2>Código de Confirmación</h2><br>
-        <input name="ticket" placeholder="TUR201901" id="confirm" required>
+        <input name="ticket" placeholder="TUR201901" id="confirm" required onfocus="this.value='TUR2019'">
         <br><br><br><br><br>
         <button name="confirm" id="accept" type="summit">Aceptar</button>
         <button id="clear">Limpiar</button>
@@ -53,7 +53,13 @@
         <h2>Correo</h2>
         <input placeholder="tucorreo@dominio.com" name="correo" type="email" id="confirm" required><br><br>
         <h2>Institución</h2>
-        <input placeholder="MINTUR" id="confirm" type="work" name="work" required>
+        <input placeholder="MINTUR" id="confirm" type="work" name="work" required><br><br>
+        <h5 >¿Viene acompañado? <input type="checkbox" id="chec" 
+          oninput="if(this.checked){document.getElementById('agregar').style.display = 'block';}else{document.getElementById('agregar').style.display = 'none';}"></h5><br>
+        <div id="agregar">
+        <h6>¿Con cuanta personas viene? <input type="number" style="width: 50px;" name="coment" 
+          onkeypress="return event.charCode >= 48 && event.charCode <=57 "inputmode="decimal"></h6><!-- || event.charCode==46 || event.charCode==44 -->
+        </div>
         <br><br><br><br><br>
         <button type="summit" name="accept" id="accept">Aceptar</button>
         <button id="clear">Limpiar</button>
@@ -245,7 +251,7 @@ if(isset($_POST['confirm'])){
         modalcon($nombre);
       }
         else{
-      $sql="SELECT NOMBRE, CORREO, INSTITUCION FROM CONFIRMACION WHERE ID = ".$id."";
+      $sql="SELECT NOMBRE, CORREO, INSTITUCION FROM PARTICIPANTE WHERE ID = ".$id."";
       $result = $con->query($sql);
               if (!$result) {
                 echo 'Could not run query: ' . mysql_error();

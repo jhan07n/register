@@ -137,3 +137,7 @@ body img{
     border:0px;
 }
 /*--thank you pop ends here--*/
+
+#agregar{
+    display: none;
+}
