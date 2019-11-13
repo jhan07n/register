@@ -42,7 +42,7 @@
         <h2>Código de Confirmación</h2><br>
         <input name="ticket" placeholder="TUR201901" id="confirm" >
         <br><br><br><br><br>
-        <button name="confirm" id="accept" >Aceptar</button>
+        <button name="confirm" id="accept" type="summit">Aceptar</button>
         <button id="clear">Limpiar</button>
       </div></form>
 
