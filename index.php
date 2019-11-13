@@ -172,7 +172,7 @@
 
 
     if($con){
-      mysql_query("SET NAMES 'utf8'");
+      //mysql_query("SET NAMES 'utf8'");
 
       $sql= "SELECT ID,CORREO from CONFIRMACION WHERE CORREO = '$correo'";
       $result = $con->query($sql);
