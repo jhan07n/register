@@ -226,7 +226,7 @@ if(isset($_POST['confirm'])){
     if ($con->connect_error) {
       die("Connection failed: " . $con->connect_error);
   }
-  echo '<script>alert("Hola")</script>';
+  
       mysql_query("SET NAMES 'utf8'");
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
@@ -243,7 +243,7 @@ if(isset($_POST['confirm'])){
                 $nombre = $row["NOMBRE"];
                 $correo = $row["CORREO"];
                 $work = $row["INSTITUCION"];
-                $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
+                $sql="INSERT INTO CONFIRMAR (ID,NOMBRE, CORREO, INSTITUCION) VALUES ('$id','$nombre','$correo','$work')";
                 if ($con->query($sql) === TRUE) {
                   modalcon($nombre);
                 }
