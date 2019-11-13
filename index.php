@@ -227,10 +227,10 @@ if(isset($_POST['confirm'])){
       die("Connection failed: " . $con->connect_error);
   }
   
-      echo '<script>alert("Hola")</script>';
+      
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
-      
+      echo '<script>alert('.$id.')</script>';
       $sql="SELECT NOMBRE, CORREO, INSTITUCION from CONFIRMACION WHERE ID = '$id'";
       $result = $con->query($sql);
               if (!$result) {
