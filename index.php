@@ -157,7 +157,7 @@
           }
         }
    $con = new mysqli("localhost", "u788306272_admin", "bF-64.sQ@", "u788306272_TUR");
-    //$con = new mysqli("localhost", "admin", "bF-64.sQ@", "TUR");
+   // $con = new mysqli("localhost", "admin", "bF-64.sQ@", "TUR");
     if(isset($_POST['accept'])){
       registrar($con);
     }
@@ -231,19 +231,20 @@ if(isset($_POST['confirm'])){
       
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
-      echo '<script>alert("Hola estoy antes del select")</script>';
+    
       $sql="SELECT NOMBRE, CORREO, INSTITUCION FROM CONFIRMACION WHERE ID = ".$id."";
- 
       $result = $con->query($sql);
               if (!$result) {
                 echo 'Could not run query: ' . mysql_error();
                 exit;
               }
               if ($result->num_rows > 0) {
+                
                 $row = $result->fetch_assoc();
                 $nombre = $row["NOMBRE"];
                 $correo = $row["CORREO"];
                 $work = $row["INSTITUCION"];
+                echo '<script>alert("'.$nombre.' '.$correo.'")</script>';
                 $sql="INSERT INTO CONFIRMAR (ID,NOMBRE, CODIGO, CORREO, INSTITUCION) VALUES ('$id','$nombre','$ticket','$correo','$work')";
                 if ($con->query($sql) === TRUE) {
                   modalcon($nombre);
