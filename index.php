@@ -226,11 +226,11 @@ if(isset($_POST['confirm'])){
     if ($con->connect_error) {
       die("Connection failed: " . $con->connect_error);
   }
-  
+  echo '<script>alert("Hola")</script>';
       mysql_query("SET NAMES 'utf8'");
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
-      echo '<script>alert("Hola")</script>';
+      
       $sql="SELECT NOMBRE, CORREO, INSTITUCION from CONFIRMACION WHERE ID = '$id'";
       $result = $con->query($sql);
               if (!$result) {
