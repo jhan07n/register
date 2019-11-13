@@ -40,7 +40,7 @@
       <form action="" method="post">
       <div id="confirmar" class="w3-container city" style="display:none">
         <h2>Código de Confirmación</h2><br>
-        <input name="ticket" placeholder="TUR201901" id="confirm" >
+        <input name="ticket" placeholder="TUR201901" id="confirm" required>
         <br><br><br><br><br>
         <button name="confirm" id="accept" type="summit">Aceptar</button>
         <button id="clear">Limpiar</button>
@@ -270,7 +270,7 @@ if(isset($_POST['confirm'])){
                        
             <div class="thank-you-pop">
               <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-              <h1>Bienvenido de nuevo! '.$nombre.'</h1>
+              <h2>Bienvenido de nuevo! <b style="color:#002666">'.$nombre.'<b></h2>
               <p>Su codigo de registro ha sido Confirmado.</p>
               
              </div>
