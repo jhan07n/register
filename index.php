@@ -231,7 +231,18 @@ if(isset($_POST['confirm'])){
       
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
-    
+
+      $sql="SELECT NOMBRE FROM CONFIRMAR WHERE ID=".$id."";
+      $result = $con->query($sql);
+      if (!$result) {
+        echo 'Could not run query: ' . mysql_error();
+        exit;
+      }
+      if ($result->num_rows > 0) {
+        $nombre = $row["NOMBRE"];
+        modalcon($nombre);
+      }
+        else{
       $sql="SELECT NOMBRE, CORREO, INSTITUCION FROM CONFIRMACION WHERE ID = ".$id."";
       $result = $con->query($sql);
               if (!$result) {
@@ -244,7 +255,6 @@ if(isset($_POST['confirm'])){
                 $nombre = $row["NOMBRE"];
                 $correo = $row["CORREO"];
                 $work = $row["INSTITUCION"];
-                echo '<script>alert("'.$nombre.' '.$correo.'")</script>';
                 $sql="INSERT INTO CONFIRMAR (ID,NOMBRE, CODIGO, CORREO, INSTITUCION) VALUES ('$id','$nombre','$ticket','$correo','$work')";
                 if ($con->query($sql) === TRUE) {
                   modalcon($nombre);
@@ -255,7 +265,7 @@ if(isset($_POST['confirm'])){
         }
 
       }
-    
+  }
 
 
       function modalcon($nombre){
