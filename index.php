@@ -240,8 +240,8 @@ if(isset($_POST['confirm'])){
         exit;
       }
       if ($result->num_rows > 0) {
-        $nombre = $row["NOMBRE"];
-        echo 'HOla'.$nombre;
+        $row = $result->fetch_assoc();
+        $nombre = $row["NOMBRE"];]
         modalcon($nombre);
       }
         else{
