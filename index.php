@@ -121,7 +121,7 @@
         $sql="INSERT INTO CONFIRMACION (NOMBRE, CORREO, INSTITUCION) VALUES ('$nombre','$correo','$work')";
            
       if ($con->query($sql) === TRUE) {
-        $sql= "SELECT ID from CONFIRMACION WHERE CORREO = ' $correo  '";
+        $sql= "SELECT ID from CONFIRMACION WHERE CORREO = '$correo'";
         $result = $con->query($sql);
         if (!$result) {
           echo 'Could not run query: ' . mysql_error();
