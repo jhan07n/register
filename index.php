@@ -240,7 +240,6 @@ if(isset($_POST['confirm'])){
     if ($con->connect_error) {
       die("Connection failed: " . $con->connect_error);
   }
-  mysql_query("SET NAMES 'utf8'");
       
       $ticket = $_POST['ticket'];
       $id = str_replace("TUR2019","",$ticket);
